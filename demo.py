@@ -13,8 +13,17 @@ class MyClient2(Client):
         cl.disconnect()
         exit(0)
 
+host = ('127.0.0.1', 5000), ('91.204.57.48', 8007)
+print('Выбирите сервер')
+print('1. localhost')
+print('2. test server')
+a = input()
 
-cl = MyClient2('127.0.0.1', 5000)
+if a == '1':
+    host = host[0]
+else:
+    host = host[1]
+cl = MyClient2(*host)
 cl.connect()
 
 print('Игра угадай число.')
